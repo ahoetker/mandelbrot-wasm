@@ -1,3 +1,9 @@
+# mandelbrot-wasm
+`mandelbrot-wasm` is a JS/wasm view for the Mandelbrot set. This project
+compiles the Rust crate [mandelbrot_common](https://github.com/ahoetker/mandelbrot) by the same author.
+
+
+
 ## How to install
 
 ```sh
