@@ -1,0 +1,34 @@
+language: rust
+sudo: false
+cache: cargo
+stages:
+  - test
+  - deploy
+addons:
+  firefox: latest
+  chrome: stable
+before_script:
+  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+  - (test -x $HOME/.cargo/bin/cargo-generate || cargo install --vers "^0.2" cargo-generate)
+  - cargo install-update -a
+  - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+script:
+  - cargo generate --git . --name testing
+  # Having a broken Cargo.toml (in that it has curlies in fields) anywhere
+  # in any of our parent dirs is problematic.
+  - mv Cargo.toml Cargo.toml.tmpl
+  - cd testing
+  - wasm-pack build
+  - cargo test
+  - wasm-pack test --chrome --firefox --headless
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  on:
+    branch: master
+  target_branch: gh-pages
+  local_dir: dist
+
+
