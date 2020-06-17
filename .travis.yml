@@ -13,6 +13,7 @@ script:
   - wasm-pack build
   - cargo test
   - wasm-pack test --chrome --firefox --headless
+  - rimraf dist pkg && webpack
 deploy:
   provider: pages
   skip_cleanup: true
