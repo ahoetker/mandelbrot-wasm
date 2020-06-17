@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.controls {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1em;
+    margin-top: 5em;
+}
+
+.controls h1 {
+    margin: 0 .3em 0 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.controls > div {
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.range-wrap {
+    position: relative;
+}
+.range {
+    width: 100%;
+}
+.bubble {
+    background: #33C3F0;
+    color: white;
+    padding: 4px 12px;
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+}
+.bubble::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #33C3F0;
+    top: -1px;
+    left: 50%;
+}
+
+button,
+input[type="number"] {
+    margin-bottom: 0;
+}

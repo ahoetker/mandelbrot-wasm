@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/skeleton.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="index.js"></script>
+</head>
+<body>
+<main>
+  <div class="controls">
+    <h1>Params: </h1>
+    <div class="range-wrap">
+      <label for="n">n</label>
+      <input type="range" class="range" id="n" min="100" max="1200">
+      <output class="bubble">
+      </output>
+    </div>
+    <div class="range-wrap">
+      <label for="maxSteps">Max steps</label>
+      <input type="range" class="range" id="maxSteps" min="1" max="255">
+      <output class="bubble">
+      </output>
+    </div>
+    <button class="button-primary" id="render">render</button>
+  </div>
+    <canvas id="drawing" width="900" height="900"></canvas>
+</main>
+</body>
+</html>
