@@ -1,7 +1,10 @@
 # mandelbrot-wasm
+[![Build Status](https://travis-ci.com/ahoetker/mandelbrot-wasm.svg?branch=master)](https://travis-ci.com/ahoetker/mandelbrot-wasm)
+
 `mandelbrot-wasm` is a JS/wasm view for the Mandelbrot set. This project
 compiles the Rust crate [mandelbrot_common](https://github.com/ahoetker/mandelbrot) by the same author.
 
+Check out the live deployment: https://ahoetker.github.io/mandelbrot-wasm/
 
 
 ## How to install
